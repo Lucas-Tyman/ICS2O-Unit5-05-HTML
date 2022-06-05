@@ -2,7 +2,7 @@
 // Created on: Apr 2022
 // This file contains the JS functions for index.html
 
-'use strict'
+"use strict"
 
 /**
  * Check service worker.
@@ -23,15 +23,22 @@ function check() {
   var thirdLength = document.getElementById("third-dimension").value
 
   // process and output
-  if ((firstLength <= 0) || (secondLength <= 0) || (thirdLength <= 0)) {
-    document.getElementById("answer").innerHTML = 'Please input a positive number.'
+  if (firstLength <= 0 || secondLength <= 0 || thirdLength <= 0) {
+    document.getElementById("answer").innerHTML =
+      "Please input a positive number."
   } else {
-    if ((firstLength == secondLength) && (secondLength == thirdLength)) {
-      document.getElementById("answer").innerHTML = 'It is an equilateral triangle!'
-    } else if ((firstLength == secondLength) || (firstLength == thirdLength) || (secondLength == thirdLength)) {
-      document.getElementById("answer").innerHTML = 'It is an isosceles triangle!'
+    if (firstLength == secondLength && secondLength == thirdLength) {
+      document.getElementById("answer").innerHTML =
+        "It is an equilateral triangle!"
+    } else if (
+      firstLength == secondLength ||
+      firstLength == thirdLength ||
+      secondLength == thirdLength
+    ) {
+      document.getElementById("answer").innerHTML =
+        "It is an isosceles triangle!"
     } else {
-      document.getElementById("answer").innerHTML = 'It is a scalene triangle!'
-    }    
+      document.getElementById("answer").innerHTML = "It is a scalene triangle!"
+    }
   }
 }
